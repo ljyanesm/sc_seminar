@@ -1,0 +1,92 @@
+#+TITLE:     Scientific Computing Tools
+#+AUTHOR: Luis Yanes, Tim Stitt
+#+EMAIL:     Luis.Yanes@tgac.ac.uk, Tim.Stitt@tgac.ac.uk
+#+DESCRIPTION: 
+#+KEYWORDS: HPC, Scientific Computing, Tools, DMTCP, Lmod
+#+LANGUAGE:  en
+#+OPTIONS: reveal_center:nil reveal_progress:t reveal_history:t reveal_control:t
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS:   H:3 num:nil toc:1 \n:nil @:nil ::nil |:nil ^:nil -:t f:t *:t <:t
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexportB
+#+LINK_UP:   
+#+LINK_HOME:
+#+REVEAL_MARGIN: 0.03
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_TRANS: slide
+#+REVEAL_THEME: simple
+#+REVEAL_HLEVEL: 1
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Introduction to Scientific Computing">
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_EXTRA_CSS: ./presentation.css
+
+* DMTCP - Checkpoint & Restart
+- DMTCP idea is to wrap your program and provide external checkpoint/restart facilities
+- DMTCP backs up your process state (opened files, active memory, sub processes) onto the disk and allows to restart from last checkpoint
+- DMTCP can be integrated with SLURM and PBS
+*** Single thread processes
+Add a video/gif of an example
+Show the CPU usage to 100%
+*** Multi thread processes
+Add a video/gif of an example
+Show CPU usage to ~200%
+* Lmod - Environment management
+- Environment management is HARD!
+- Too many versions, too many tools...
+- Is there an answer to managing dependencies?
+** Compilers
+- Can I use a particular version of a compiler?
+- Am I really using that compiler?
+- Can I sanely manage software compilation dependencies?
+- Gonza's example
+** Software dependencies
+- Hey! I heard you liked tools, so I made a tool that requires a tool to build your tool...
+- Now seriously... 
+- There are too many dependencies, how do I learn which software I have loaded or is necessary for a tool (without failing until it works!)
+- Prereq, Luca's example
+** Software requirements
+- I want to do QC so I need (a _verylonglistoftools_...)
+- I loaded my _verylonglistoftools_, but... What has it made available?
+- Nice! But... This other tool doesn't play nicely with XYZ-2.3.4, I need XYZ-2.1.2 at most
+- Wait, are you telling me I can do all of this within my submission scripts? Indeed my friend, indeed...
+v- QC meta-module
+* Code customisation
+- I need to use _this_ software, but it won't work =(
+- No worries, we will make it work!  =)
+** BioNano pipeline for PBS on UV2000
+- Debugging BioNano pipeline and the PBS-DRMAA library to find a bug on pbs_submit
+- Provided a workaround...
+- Xeon Phi support coming soon*
+
+[[./images/workaround.png]]
+
+=*Terms and conditions apply...=
+** Migrating tools to SLURM
+- PBS, SGE and LSF are bioinformatics friends
+- SLURM is the new kid in the bioinformatics block but hasn't got many friends yet...
+- We help SLURM meet new friends!
+#+ATTR_HTML: :height 25%, :width 25%
+[[./images/lonely_slurm.png]]
+** STRUCTURE
+- MCMC codes are *HARD*!
+- Debugging stochastic code is *HARD* because it's supposed to be difficult to test/reproduce
+- Unless it does the exact same thing all the time!
+- Initialise the random seeds randomly when running in parallel helps get the expected *different* results!
+* Thanks
+- BioNano pipeline
+  - Graham Etherington
+  - Ricardo Ramirez
+  - Pirita Paajanen
+  - CiS Team
+- Lmod
+  - Gonzalo Garcia
+  - Luca Venturini
+  - Matthew Hartley
+  - Chris Bridson
+- STRUCTURE
+  - Tim Stitt
+  - Diane Saunders
+  - Vanessa Bueno
+  - Ricardo Ramirez
