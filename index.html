@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Scientific Computing Tools</title>
+<meta name="author" content="(Luis Yanes, Tim Stitt)"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="HPC, Scientific Computing, Tools, DMTCP, Lmod"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/simple.css" id="theme"/>
+<link rel="stylesheet" href="./presentation.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="Introduction to Scientific Computing">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Scientific Computing Tools</h1>
+<h2>Luis Yanes, Tim Stitt</h2>
+<h2><a href="mailto:Luis.Yanes@tgac.ac.uk">Luis.Yanes@tgac.ac.uk</a>, <a href="mailto:Tim.Stitt@tgac.ac.uk">Tim.Stitt@tgac.ac.uk</a></h2>
+<h2></h2>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgheadline3">DMTCP - Checkpoint &amp; Restart</a></li>
+<li><a href="#/slide-orgheadline7">Lmod - Environment management</a></li>
+<li><a href="#/slide-orgheadline11">Code customisation</a></li>
+<li><a href="#/slide-orgheadline12">Thanks</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-orgheadline3">
+<h2 id="orgheadline3">DMTCP - Checkpoint &amp; Restart</h2>
+<ul>
+<li>DMTCP idea is to wrap your program and provide external checkpoint/restart facilities</li>
+<li>DMTCP backs up your process state (opened files, active memory, sub processes) onto the disk and allows to restart from that state</li>
+<li>DMTCP has been integrated with SLURM and PBS</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline1">
+<h4 id="orgheadline1">Single thread processes</h4>
+<p>
+Add a video/gif of an example
+Show the CPU usage to 100%
+</p>
+</section>
+<section id="slide-orgheadline2">
+<h4 id="orgheadline2">Multi thread processes</h4>
+<p>
+Add a video/gif of an example
+Show CPU usage to ~200%
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline7">
+<h2 id="orgheadline7">Lmod - Environment management</h2>
+<ul>
+<li>Environment management is HARD!</li>
+<li>Too many versions, too many tools&#x2026;</li>
+<li>Is there an answer to managing dependencies?</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">Compilers</h3>
+<ul>
+<li>Can I use a particular version of a compiler?</li>
+<li>Am I really using that compiler?</li>
+<li>Can I sanely manage software compilation dependencies?</li>
+<li>Gonza's example</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5">Software dependencies</h3>
+<ul>
+<li>Hey! I heard you liked tools, so I made a tool that requires a tool to build your tool&#x2026;</li>
+<li>Now seriously&#x2026;</li>
+<li>There are too many dependencies, how do I learn which software I have loaded or is necessary for a tool (without failing until it works!)</li>
+<li>Prereq, Luca's example</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Software requirements</h3>
+<ul>
+<li>I want to do QC so I need (a <span class="underline">verylonglistoftools</span>&#x2026;)</li>
+<li>I loaded my <span class="underline">verylonglistoftools</span>, but&#x2026; What has it made available?</li>
+<li>Nice! But&#x2026; This other tool doesn't play nicely with XYZ-2.3.4, I need XYZ-2.1.2 at most</li>
+<li>Wait, are you telling me I can do all of this within my submission scripts? Indeed my friend, indeed&#x2026;</li>
+
+</ul>
+<p>
+v- QC meta-module
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11">Code customisation</h2>
+<ul>
+<li>I need to use <span class="underline">this</span> software, but it won't work =(</li>
+<li>No worries, we will make it work!  =)</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8">BioNano pipeline for PBS on UV2000</h3>
+<ul>
+<li>Debugging BioNano pipeline and the PBS-DRMAA library to find a bug on pbs_submit</li>
+<li>Provided a workaround&#x2026;</li>
+<li>Xeon Phi support coming soon*</li>
+
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/workaround.png" alt="workaround.png" />
+</p>
+</div>
+
+<p>
+<code>*Terms and conditions apply...</code>
+</p>
+</section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">Migrating tools to SLURM</h3>
+<ul>
+<li>PBS, SGE and LSF are bioinformatics friends</li>
+<li>SLURM is the new kid in the bioinformatics block but hasn't got many friends yet&#x2026;</li>
+<li>We help SLURM meet new friends!</li>
+
+</ul>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./images/lonely_slurm.svg" height="25%," width="25%">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+</section>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">STRUCTURE</h3>
+<ul>
+<li>MCMC codes are <b>HARD</b>!</li>
+<li>Debugging stochastic code is <b>HARD</b> because it's supposed to be difficult to test/reproduce</li>
+<li>Unless it does the exact same thing all the time!</li>
+<li>Initialise the random seeds randomly when running in parallel helps get the expected <b>different</b> results!</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline12">
+<h2 id="orgheadline12">Thanks</h2>
+<ul>
+<li>BioNano pipeline
+<ul>
+<li>Graham Etherington</li>
+<li>Ricardo Ramirez</li>
+<li>Pirita</li>
+<li>CiS Team</li>
+
+</ul></li>
+<li>Lmod
+<ul>
+<li>Gonzalo Garcia</li>
+<li>Luca Venturini</li>
+<li>Matthew Hartley</li>
+
+</ul></li>
+<li>STRUCTURE
+<ul>
+<li>Tim Stitt</li>
+<li>Diane Saunders</li>
+<li>Vanessa Bueno</li>
+<li>Ricardo Ramirez</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: false,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+width: 1200,
+height: 800,
+margin: 0.03,
+minScale: 0.50,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
