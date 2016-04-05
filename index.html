@@ -39,8 +39,8 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-orgheadline3">DMTCP - Checkpoint &amp; Restart</a></li>
-<li><a href="#/slide-orgheadline7">Lmod - Environment management</a></li>
+<li><a href="#/slide-orgheadline4">Lmod - Environment management</a></li>
+<li><a href="#/slide-orgheadline7">DMTCP - Checkpoint &amp; Restart</a></li>
 <li><a href="#/slide-orgheadline11">Code customisation</a></li>
 <li><a href="#/slide-orgheadline12">Acknowledgements</a></li>
 </ul>
@@ -49,42 +49,23 @@
 </section>
 
 <section>
-<section id="slide-orgheadline3">
-<h2 id="orgheadline3">DMTCP - Checkpoint &amp; Restart</h2>
+<section id="slide-orgheadline4">
+<h2 id="orgheadline4">Lmod - Environment management</h2>
 <ul>
+<<<<<<< HEAD
 <li>DMTCP idea is to wrap your program and provide external checkpoint/restart facilities</li>
 <li>DMTCP backs up your process state (opened files, active memory, sub processes) onto the disk and allows to restart from last checkpoint</li>
 <li>DMTCP can be integrated with SLURM and PBS</li>
+=======
+<li>Lmod is a popular HPC tool developed by the community for environment management</li>
+<li>Helps with the issue of having "too many versions, too many tools&#x2026;"</li>
+<li>Also, improves dependency management across different software</li>
+>>>>>>> master
 
 </ul>
 </section>
 <section id="slide-orgheadline1">
-<h4 id="orgheadline1">Single thread processes</h4>
-<p>
-Add a video/gif of an example
-Show the CPU usage to 100%
-</p>
-</section>
-<section id="slide-orgheadline2">
-<h4 id="orgheadline2">Multi thread processes</h4>
-<p>
-Add a video/gif of an example
-Show CPU usage to ~200%
-</p>
-</section>
-</section>
-<section>
-<section id="slide-orgheadline7">
-<h2 id="orgheadline7">Lmod - Environment management</h2>
-<ul>
-<li>Environment management is HARD!</li>
-<li>Too many versions, too many tools&#x2026;</li>
-<li>Is there an answer to managing dependencies?</li>
-
-</ul>
-</section>
-<section id="slide-orgheadline4">
-<h3 id="orgheadline4">Compilers</h3>
+<h3 id="orgheadline1">Compilers</h3>
 <ul>
 <li>Can I use a particular version of a compiler?</li>
 <li>Am I really using that compiler?</li>
@@ -93,8 +74,8 @@ Show CPU usage to ~200%
 
 </ul>
 </section>
-<section id="slide-orgheadline5">
-<h3 id="orgheadline5">Software dependencies</h3>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Software dependencies</h3>
 <ul>
 <li>There are too many dependencies! How do I learn which software I have loaded and/or is necessary for a particular software</li>
 <li>Prereq, Luca's example</li>
@@ -106,14 +87,45 @@ Show CPU usage to ~200%
 </p>
 </div>
 </section>
-<section id="slide-orgheadline6">
-<h3 id="orgheadline6">Software requirements</h3>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3">Software requirements</h3>
 <ul>
 <li>I want to do QC so I need (a <span class="underline">verylonglistoftools</span>&#x2026;)</li>
 <li>I loaded my <span class="underline">verylonglistoftools</span>, but&#x2026; What has it made available?</li>
 <li>Nice! But&#x2026; This other tool doesn't play nicely with XYZ-2.3.4, I need XYZ-2.1.2 at most</li>
 <li>Wait, are you telling me I can do all of this within my submission scripts? Indeed my friend, indeed&#x2026;</li>
 <li>QC meta-module</li>
+<<<<<<< HEAD
+=======
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline7">
+<h2 id="orgheadline7">DMTCP - Checkpoint &amp; Restart</h2>
+<ul>
+<li>DMTCP stands for Distributed MultiThreaded Checkpointing</li>
+<li>DMTCP's idea is to wrap your program and provide external checkpoint/restart facilities</li>
+<li>DMTCP backs up your process state (opened files, active memory, sub processes) onto the disk and allows to restart from last checkpoint</li>
+<li>DMTCP can be integrated with SLURM and PBS</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline5">
+<h4 id="orgheadline5">Single thread processes</h4>
+<ul>
+<li>Demo</li>
+<li>Show the CPU usage to 100%</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline6">
+<h4 id="orgheadline6">Multi thread processes</h4>
+<ul>
+<li>Demo</li>
+<li>Show CPU usage to ~200%</li>
+>>>>>>> master
 
 </ul>
 </section>
@@ -143,14 +155,10 @@ Show CPU usage to ~200%
 <li>Xeon Phi support coming soon*</li>
 
 </ul>
-
-
-<div class="figure">
-<p><img src="./images/workaround.png" alt="workaround.png" />
-</p>
-</div>
-
 <p>
+<img src="./images/workaround.png" alt="workaround.png" />
+<br  />
+<br  />
 <code>*Terms and conditions apply...</code>
 </p>
 </section>
@@ -185,12 +193,26 @@ Show CPU usage to ~200%
 <ul>
 <li>BioNano pipeline
 <ul>
+<<<<<<< HEAD
 <li>Graham Etherington, Ricardo Ramirez, Pirita Paajanen, the CiS Team</li>
+=======
+<li>Graham Etherington</li>
+<li>Ricardo Ramirez</li>
+<li>Pirita Paajanen</li>
+<li>CiS Team</li>
+>>>>>>> master
 
 </ul></li>
 <li>Lmod
 <ul>
+<<<<<<< HEAD
 <li>Gonzalo Garcia, Luca Venturini, Matthew Hartley, Chris Bridson</li>
+=======
+<li>Gonzalo Garcia</li>
+<li>Luca Venturini</li>
+<li>Matthew Hartley</li>
+<li>Chris Bridson</li>
+>>>>>>> master
 
 </ul></li>
 <li>STRUCTURE

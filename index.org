@@ -22,20 +22,10 @@
 #+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+REVEAL_EXTRA_CSS: ./presentation.css
 
-* DMTCP - Checkpoint & Restart
-- DMTCP idea is to wrap your program and provide external checkpoint/restart facilities
-- DMTCP backs up your process state (opened files, active memory, sub processes) onto the disk and allows to restart from last checkpoint
-- DMTCP can be integrated with SLURM and PBS
-*** Single thread processes
-Add a video/gif of an example
-Show the CPU usage to 100%
-*** Multi thread processes
-Add a video/gif of an example
-Show CPU usage to ~200%
 * Lmod - Environment management
-- Environment management is HARD!
-- Too many versions, too many tools...
-- Is there an answer to managing dependencies?
+- Lmod is a popular HPC tool developed by the community for environment management
+- Helps with the issue of having "too many versions, too many tools..."
+- Also, improves dependency management across different software
 ** Compilers
 - Can I use a particular version of a compiler?
 - Am I really using that compiler?
@@ -51,6 +41,20 @@ Show CPU usage to ~200%
 - Nice! But... This other tool doesn't play nicely with XYZ-2.3.4, I need XYZ-2.1.2 at most
 - Wait, are you telling me I can do all of this within my submission scripts? Indeed my friend, indeed...
 - QC meta-module
+<<<<<<< HEAD
+=======
+* DMTCP - Checkpoint & Restart
+- DMTCP stands for Distributed MultiThreaded Checkpointing
+- DMTCP's idea is to wrap your program and provide external checkpoint/restart facilities
+- DMTCP backs up your process state (opened files, active memory, sub processes) onto the disk and allows to restart from last checkpoint
+- DMTCP can be integrated with SLURM and PBS
+*** Single thread processes
+- Demo
+- Show the CPU usage to 100%
+*** Multi thread processes
+- Demo
+- Show CPU usage to ~200%
+>>>>>>> master
 * Code customisation
 - I need to use _this_ software, but it won't work =(
   - No worries, we will make it work!  =)
@@ -60,9 +64,9 @@ Show CPU usage to ~200%
 - Debugging BioNano pipeline and the PBS-DRMAA library to find a bug on pbs_submit
 - Provided a workaround...
 - Xeon Phi support coming soon*
-
 [[./images/workaround.png]]
-
+\\
+\\
 =*Terms and conditions apply...=
 ** Migrating tools to SLURM
 - PBS, SGE and LSF are bioinformatics friends
