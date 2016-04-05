@@ -42,7 +42,7 @@
 <li><a href="#/slide-orgheadline3">DMTCP - Checkpoint &amp; Restart</a></li>
 <li><a href="#/slide-orgheadline7">Lmod - Environment management</a></li>
 <li><a href="#/slide-orgheadline11">Code customisation</a></li>
-<li><a href="#/slide-orgheadline12">Thanks</a></li>
+<li><a href="#/slide-orgheadline12">Acknowledgements</a></li>
 </ul>
 </div>
 </div>
@@ -53,8 +53,8 @@
 <h2 id="orgheadline3">DMTCP - Checkpoint &amp; Restart</h2>
 <ul>
 <li>DMTCP idea is to wrap your program and provide external checkpoint/restart facilities</li>
-<li>DMTCP backs up your process state (opened files, active memory, sub processes) onto the disk and allows to restart from that state</li>
-<li>DMTCP has been integrated with SLURM and PBS</li>
+<li>DMTCP backs up your process state (opened files, active memory, sub processes) onto the disk and allows to restart from last checkpoint</li>
+<li>DMTCP can be integrated with SLURM and PBS</li>
 
 </ul>
 </section>
@@ -96,12 +96,15 @@ Show CPU usage to ~200%
 <section id="slide-orgheadline5">
 <h3 id="orgheadline5">Software dependencies</h3>
 <ul>
-<li>Hey! I heard you liked tools, so I made a tool that requires a tool to build your tool&#x2026;</li>
-<li>Now seriously&#x2026;</li>
-<li>There are too many dependencies, how do I learn which software I have loaded or is necessary for a tool (without failing until it works!)</li>
+<li>There are too many dependencies! How do I learn which software I have loaded and/or is necessary for a particular software</li>
 <li>Prereq, Luca's example</li>
 
 </ul>
+
+<div class="figure">
+<p><img src="./images/tools.jpg" alt="tools.jpg" />
+</p>
+</div>
 </section>
 <section id="slide-orgheadline6">
 <h3 id="orgheadline6">Software requirements</h3>
@@ -110,19 +113,25 @@ Show CPU usage to ~200%
 <li>I loaded my <span class="underline">verylonglistoftools</span>, but&#x2026; What has it made available?</li>
 <li>Nice! But&#x2026; This other tool doesn't play nicely with XYZ-2.3.4, I need XYZ-2.1.2 at most</li>
 <li>Wait, are you telling me I can do all of this within my submission scripts? Indeed my friend, indeed&#x2026;</li>
+<li>QC meta-module</li>
 
 </ul>
-<p>
-v- QC meta-module
-</p>
 </section>
 </section>
 <section>
 <section id="slide-orgheadline11">
 <h2 id="orgheadline11">Code customisation</h2>
 <ul>
-<li>I need to use <span class="underline">this</span> software, but it won't work =(</li>
+<li>I need to use <span class="underline">this</span> software, but it won't work =(
+<ul>
 <li>No worries, we will make it work!  =)</li>
+
+</ul></li>
+<li>I want to make <span class="underline">this</span> run better in our resources
+<ul>
+<li>Sure, we'll have a look</li>
+
+</ul></li>
 
 </ul>
 </section>
@@ -155,8 +164,7 @@ v- QC meta-module
 </ul>
 
 <div class="figure">
-<p><object type="image/png" data="./images/lonely_slurm.png" height="25%," width="25%">
-Sorry, your browser does not support SVG.</object>
+<p><img src="./images/lonely_slurm.png" alt="lonely_slurm.png" height="25%," width="25%" />
 </p>
 </div>
 </section>
@@ -173,33 +181,30 @@ Sorry, your browser does not support SVG.</object>
 </section>
 <section>
 <section id="slide-orgheadline12">
-<h2 id="orgheadline12">Thanks</h2>
+<h2 id="orgheadline12">Acknowledgements</h2>
 <ul>
 <li>BioNano pipeline
 <ul>
-<li>Graham Etherington</li>
-<li>Ricardo Ramirez</li>
-<li>Pirita</li>
-<li>CiS Team</li>
+<li>Graham Etherington, Ricardo Ramirez, Pirita Paajanen, the CiS Team</li>
 
 </ul></li>
 <li>Lmod
 <ul>
-<li>Gonzalo Garcia</li>
-<li>Luca Venturini</li>
-<li>Matthew Hartley</li>
+<li>Gonzalo Garcia, Luca Venturini, Matthew Hartley, Chris Bridson</li>
 
 </ul></li>
 <li>STRUCTURE
 <ul>
-<li>Tim Stitt</li>
-<li>Diane Saunders</li>
-<li>Vanessa Bueno</li>
-<li>Ricardo Ramirez</li>
+<li>Tim Stitt, Diane Saunders, Pillar Corredor-Moreno, Antoine Persoons, Vanessa Bueno, Ricardo Ramirez</li>
 
 </ul></li>
 
 </ul>
+<p>
+<br  />
+<br  />
+<code>Many thank to all for your help</code>
+</p>
 </section>
 </section>
 </div>

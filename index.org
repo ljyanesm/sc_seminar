@@ -42,19 +42,20 @@ Show CPU usage to ~200%
 - Can I sanely manage software compilation dependencies?
 - Gonza's example
 ** Software dependencies
-- Hey! I heard you liked tools, so I made a tool that requires a tool to build your tool...
-- Now seriously... 
-- There are too many dependencies, how do I learn which software I have loaded or is necessary for a tool (without failing until it works!)
+- There are too many dependencies! How do I learn which software I have loaded and/or is necessary for a particular software
 - Prereq, Luca's example
+[[./images/tools.jpg]]
 ** Software requirements
 - I want to do QC so I need (a _verylonglistoftools_...)
 - I loaded my _verylonglistoftools_, but... What has it made available?
 - Nice! But... This other tool doesn't play nicely with XYZ-2.3.4, I need XYZ-2.1.2 at most
 - Wait, are you telling me I can do all of this within my submission scripts? Indeed my friend, indeed...
-v- QC meta-module
+- QC meta-module
 * Code customisation
 - I need to use _this_ software, but it won't work =(
-- No worries, we will make it work!  =)
+  - No worries, we will make it work!  =)
+- I want to make _this_ run better in our resources
+  - Sure, we'll have a look
 ** BioNano pipeline for PBS on UV2000
 - Debugging BioNano pipeline and the PBS-DRMAA library to find a bug on pbs_submit
 - Provided a workaround...
@@ -74,19 +75,13 @@ v- QC meta-module
 - Debugging stochastic code is *HARD* because it's supposed to be difficult to test/reproduce
 - Unless it does the exact same thing all the time!
 - Initialise the random seeds randomly when running in parallel helps get the expected *different* results!
-* Thanks
+* Acknowledgements
 - BioNano pipeline
-  - Graham Etherington
-  - Ricardo Ramirez
-  - Pirita Paajanen
-  - CiS Team
+  - Graham Etherington, Ricardo Ramirez, Pirita Paajanen, the CiS Team
 - Lmod
-  - Gonzalo Garcia
-  - Luca Venturini
-  - Matthew Hartley
-  - Chris Bridson
+  - Gonzalo Garcia, Luca Venturini, Matthew Hartley, Chris Bridson
 - STRUCTURE
-  - Tim Stitt
-  - Diane Saunders
-  - Vanessa Bueno
-  - Ricardo Ramirez
+  - Tim Stitt, Diane Saunders, Pillar Corredor-Moreno, Antoine Persoons, Vanessa Bueno, Ricardo Ramirez
+\\
+\\
+=Many thank to all for your help=
