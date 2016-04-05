@@ -41,8 +41,6 @@
 - Nice! But... This other tool doesn't play nicely with XYZ-2.3.4, I need XYZ-2.1.2 at most
 - Wait, are you telling me I can do all of this within my submission scripts? Indeed my friend, indeed...
 - QC meta-module
-<<<<<<< HEAD
-=======
 * DMTCP - Checkpoint & Restart
 - DMTCP stands for Distributed MultiThreaded Checkpointing
 - DMTCP's idea is to wrap your program and provide external checkpoint/restart facilities
@@ -54,7 +52,6 @@
 *** Multi thread processes
 - Demo
 - Show CPU usage to ~200%
->>>>>>> master
 * Code customisation
 - I need to use _this_ software, but it won't work =(
   - No worries, we will make it work!  =)
@@ -88,4 +85,4 @@
   - Tim Stitt, Diane Saunders, Pillar Corredor-Moreno, Antoine Persoons, Vanessa Bueno, Ricardo Ramirez
 \\
 \\
-=Many thank to all for your help=
+=Many thanks to all for your help=
