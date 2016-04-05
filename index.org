@@ -77,10 +77,12 @@
 - Unless it does the exact same thing all the time!
 - Initialise the random seeds randomly when running in parallel helps get the expected *different* results!
 * Acknowledgements
-- BioNano pipeline
-  - Graham Etherington, Ricardo Ramirez, Pirita Paajanen, the CiS Team
 - Lmod
-  - Gonzalo Garcia, Luca Venturini, Matthew Hartley, Chris Bridson
+  - Gonzalo Garcia, Luca Venturini, Matthew Hartley and Chris Bridson
+- DMTCP
+  - Tim Stitt, Michael Burrell, Chris Bridson, Sam Gallop and Adam Carrgilson
+- BioNano pipeline
+  - Graham Etherington, Ricardo Ramirez, Pirita Paajanen and the CiS Team
 - STRUCTURE
   - Tim Stitt, Diane Saunders, Pillar Corredor-Moreno, Antoine Persoons, Vanessa Bueno, Ricardo Ramirez
 \\
